@@ -15,4 +15,9 @@
 
   <app-articles [articles]="articles"/>
 
+  <ion-infinite-scroll threshold="1%" position="bottom" (ionInfinite)="loadData()">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="cargando...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
 </ion-content>
