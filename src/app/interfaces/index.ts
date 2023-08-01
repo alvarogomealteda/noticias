@@ -19,3 +19,10 @@ export interface Source {
     id?: string; //esto es porque de la api vienen alguno id nulos
     name: string;
 }
+
+export interface ArticlesByCategoryAndPage{
+    [key: string] : {
+        page: number,
+        articles: Article[]
+    }
+}

@@ -1,17 +1,24 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="ion-no-border" mode="ios">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Encabezados
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header collapse="condense" class="ion-no-border" mode="ios">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Encabezados</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-segment [value]="selectedCategory" (ionChange)="segmentChanged($event)" scrollable>
+    <ion-segment-button *ngFor="let cat of categorias" [value]="cat">
+      <ion-label class="ion-text-capitalize">{{cat}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <app-articles [articles]="articles" />
+
 </ion-content>
